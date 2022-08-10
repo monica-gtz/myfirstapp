@@ -1,9 +1,24 @@
 import React from 'react';
 import './App.css';
 
-function HelloWorld(){
+function HelloWorld(props){
+  console.log(props)
   return(
-    <div id="hello">This is my first react project</div>
+    <div id="hello">
+      <h3>{props.subtitle}</h3>
+      {props.mytext}
+    </div>
+  );
+}
+
+function App() { //funcion javascript simple
+  return (
+    <div>
+      This is my first react project:
+      <HelloWorld mytext="Hello World" subtitle="English"/>
+      <HelloWorld mytext="Hola mundo" subtitle="Spanish"/>
+      <HelloWorld mytext="Olá mundo" subtitle="Portuguese"/>
+    </div>
   );
 }
 
@@ -14,11 +29,4 @@ class App extends React.Component {
     return <div>Hola Hellouch!!!<HelloWorld/></div>
   }
 }*/
-
-function App() { //funcion javascript simple
-  return (
-    <div>Hola Hellouch!!!<HelloWorld/></div>
-  );
-}
-
 export default App;
